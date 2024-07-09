@@ -1039,22 +1039,28 @@
 
 .subnav {
 	background-color: red;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	padding: 10px 5px
+	justify-content: center;
+	padding: 10px 5px;
 }
 
+/* Ajustar espacio entre elementos de la subnav */
+
 .subnav a {
-	color: #fff;
-	text-decoration: none
+	margin: 0 50px; /* Ajusta este valor según sea necesario */
+	text-decoration: none;
+	color: white;
 }
+
+.subnav a:last-child {
+	margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+/* Ajuste de espacio de la subnav en pantallas pequeñas */
 
 @media screen and (max-width: 550px) {
 	.subnav a {
+        margin: 0 10px; /* Ajusta este valor para cambiar el espacio entre los textos en pantallas pequeñas */
 		font-size: .7em
 	}
 }
