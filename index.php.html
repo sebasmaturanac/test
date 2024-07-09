@@ -391,6 +391,90 @@ for (let i = 1; i <= 10; i++) {
                             <p>Deja tus datos y nos comunicaremos contigo para que obtengas tu independencia económica.</p>
                         </div>
                     </div>
+                    <div class="form-container">
+        
+                      <div class="formwrap-outer">
+                          <div class="intgrtn-form-signup formwrap">
+                         
+                              <div data-intgrtn-form-signup-3-steps="">
+                                  <form action="php/form-process.php" name="intgrtnFormSignup3Steps" class="intgrtn-form-signup-3-steps" id="_signup_form" method="post">
+                                      <input type="hidden" name="ip_user" id="ip_user" value="">
+                                      <input type="hidden" name="phoneNumber" id="phoneNumber" value="">
+                                      <input type="hidden" name="MPC_1" value="{subid}">                       
+              
+                                      <div class="intgrtn-loader-holder">
+                                          <div class="intgrtn-loader-text-holder">
+                                              <div class="intgrtn-lds-dual-ring"></div>
+                                              <div class="intgrtn-loader-text">Cargando...</div>
+                                          </div>
+                                      </div>
+                                      
+              
+                                      <div class="intgrtn-steps-holder"> 
+                                          <div class="intgrtn-step intgrtn-step-1 intgrtn-active">
+                                              <div class="intgrtn-input-holder intgrtn-input-holder-first-name">
+                                                  <input id="ftname" class="intgrtn-input" type="text" name="firstName" placeholder="Nombre" value="" required="" autocomplete="given-name">
+                                                  <div class="intgrtn-input-message-error">
+                                                      Favor de escribir un Nombre válido</div>
+                                              </div>
+                                              <div class="intgrtn-input-holder intgrtn-input-holder-last-name">
+                                                  <input class="intgrtn-input" type="text" id="lastName" name="lastName" placeholder="Apellido" value="" required="" autocomplete="family-name">
+                                                  <div class="intgrtn-input-message-error">
+                                                      Favor de escribir un Apellido válido</div>
+                                              </div>
+                                              <div class="intgrtn-input-holder intgrtn-input-holder-email">
+                                                  <input class="intgrtn-input" type="email" name="email" id="email" placeholder="Correo Electrónico" required="" autocomplete="email">
+                                                  <div id="presentation" style="display:none"></div>
+                                                  <div class="intgrtn-input-message-error">
+                                                      Favor de escribir un Correo Electrónico válido</div>
+                                              </div>
+              
+                                              <div class="intgrtn-input-group" style="white-space: nowrap;">
+                                                      <input id="phone" type="tel" name="phone" value="" required="" autocomplete="tel" maxlength="15" placeholder="Número de teléfono">                                   
+                                                      <br>
+                                                      <span id="error-msg"></span>
+                                                  </div>
+                                                  <div class="d-none alertphone" id="msg-importand-hone"> 
+                                                      <div class="imgalert">
+                                                          <i class="fa-solid fa-phone"></i>
+                                                      </div>
+                                                      <p>Asegurese que sea un número valido ya que le haremos una llamada para activar su cuenta</p>
+              
+                                                  </div>
+                                                  
+                                                  
+                                                  <div class="intgrtn-btn-submit-holder">
+                                                    <button class="intgrtn-btn-submit" type="submit" style="background-color: red; color: white; border: 2px solid red;">Regístrese ahora</button>                                        <div class="intgrtn-input-message-error invalid-phone-error">
+                                                          Número de teléfono inválido, por favor, prueba con otro número</div>
+                                                  </div>
+              
+                                                  <div class="text-center pt-2"><small style="display: block;font-weight: bold;">* Monto mínimo de inversión ₡135 000</small></div>
+                                            
+                                          </div>
+              
+              
+                                          <div class="intgrtn-step intgrtn-step-2 ">
+                                              <div class="intgrtn-input-holder intgrtn-input-holder-phone intgrtn-invalid">
+                                                  
+                                              </div>
+              
+              
+                                              <div class="intgrtn-step intgrtn-step-3 ">
+                                                  <div class="intgrtn-input-holder intgrtn-input-holder-phone intgrtn-invalid">
+                                                      <div class="intgrtn-input-group icon-box">
+              
+                                                      </div>
+                                                  </div>
+              
+                                              </div>
+              
+                                          </div>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -398,91 +482,9 @@ for (let i = 1; i <= 10; i++) {
 </div>
 
    
-   <div class="form-container">
-        
-        <div class="formwrap-outer">
-            <div class="intgrtn-form-signup formwrap">
-           
-                <div data-intgrtn-form-signup-3-steps="">
-                    <form action="php/form-process.php" name="intgrtnFormSignup3Steps" class="intgrtn-form-signup-3-steps" id="_signup_form" method="post">
-                        <input type="hidden" name="ip_user" id="ip_user" value="">
-                        <input type="hidden" name="phoneNumber" id="phoneNumber" value="">
-                        <input type="hidden" name="MPC_1" value="{subid}">                       
+   
 
-                        <div class="intgrtn-loader-holder">
-                            <div class="intgrtn-loader-text-holder">
-                                <div class="intgrtn-lds-dual-ring"></div>
-                                <div class="intgrtn-loader-text">Cargando...</div>
-                            </div>
-                        </div>
-                        
-
-                        <div class="intgrtn-steps-holder"> 
-                            <div class="intgrtn-step intgrtn-step-1 intgrtn-active">
-                                <div class="intgrtn-input-holder intgrtn-input-holder-first-name">
-                                    <input id="ftname" class="intgrtn-input" type="text" name="firstName" placeholder="Nombre" value="" required="" autocomplete="given-name">
-                                    <div class="intgrtn-input-message-error">
-                                        Favor de escribir un Nombre válido</div>
-                                </div>
-                                <div class="intgrtn-input-holder intgrtn-input-holder-last-name">
-                                    <input class="intgrtn-input" type="text" id="lastName" name="lastName" placeholder="Apellido" value="" required="" autocomplete="family-name">
-                                    <div class="intgrtn-input-message-error">
-                                        Favor de escribir un Apellido válido</div>
-                                </div>
-                                <div class="intgrtn-input-holder intgrtn-input-holder-email">
-                                    <input class="intgrtn-input" type="email" name="email" id="email" placeholder="Correo Electrónico" required="" autocomplete="email">
-                                    <div id="presentation" style="display:none"></div>
-                                    <div class="intgrtn-input-message-error">
-                                        Favor de escribir un Correo Electrónico válido</div>
-                                </div>
-
-                                <div class="intgrtn-input-group" style="white-space: nowrap;">
-                                        <input id="phone" type="tel" name="phone" value="" required="" autocomplete="tel" maxlength="15" placeholder="Número de teléfono">                                   
-                                        <br>
-                                        <span id="error-msg"></span>
-                                    </div>
-                                    <div class="d-none alertphone" id="msg-importand-hone"> 
-                                        <div class="imgalert">
-                                            <i class="fa-solid fa-phone"></i>
-                                        </div>
-                                        <p>Asegurese que sea un número valido ya que le haremos una llamada para activar su cuenta</p>
-
-                                    </div>
-                                    
-                                    
-                                    <div class="intgrtn-btn-submit-holder">
-                                      <button class="intgrtn-btn-submit" type="submit" style="background-color: red; color: white; border: 2px solid red;">Regístrese ahora</button>                                        <div class="intgrtn-input-message-error invalid-phone-error">
-                                            Número de teléfono inválido, por favor, prueba con otro número</div>
-                                    </div>
-
-                                    <div class="text-center pt-2"><small style="display: block;font-weight: bold;">* Monto mínimo de inversión ₡135 000</small></div>
-                              
-                            </div>
-
-
-                            <div class="intgrtn-step intgrtn-step-2 ">
-                                <div class="intgrtn-input-holder intgrtn-input-holder-phone intgrtn-invalid">
-                                    
-                                </div>
-
-
-                                <div class="intgrtn-step intgrtn-step-3 ">
-                                    <div class="intgrtn-input-holder intgrtn-input-holder-phone intgrtn-invalid">
-                                        <div class="intgrtn-input-group icon-box">
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                    </div></form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
+   
 </div><script type="text/javascript">function agregarClasePopbubble(idpop) {
 const elemento = document.getElementById("personfloat" +idpop );
 elemento.classList.add("popbubble");
