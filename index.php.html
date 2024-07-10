@@ -44,8 +44,10 @@
     <link rel="stylesheet" href="css/toastr.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/intlTelInput.css">
-    
-    <!-- JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JavaScript -->    
+     <script src="js/utils24.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/toastr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -274,7 +276,7 @@ var moneyindexado = money.toLocaleString('es-CR', { style: 'currency', currency:
 alertify.notify(' <div class="imgface"> <img src="img/' +  count  + '.jpg" /> </div> <div class="textface"><p class="fb-user">' + users[count] + '</p><p class="pwin"> acaba de generar ' + moneyindexado + ' de un depósito de ₡135 000   </p></div>', 'facebook');
 }
 
-var count = 0;
+var count = 1;
 
 (function loop() {
     var rand = Math.round(Math.random() * (25000 - 60000)) + 60000;
@@ -355,11 +357,8 @@ var count = 0;
               <div class="section">
                 <p>Anuncio oficialmente que estoy abriendo el acceso a <a href="#registro">la plataforma</a>, pero los lugares serán limitados. Las primeras 100 personas afortunadas que hayan enviado su solicitud después de ver el anuncio en Facebook podrán invertir. Es muy sencillo; si tienes la suerte de convertirte en participante, espera una llamada de uno de nuestros gerentes y te ayudarán a comenzar lo antes posible. Ten en cuenta que la inversión mínima es de <a href="#registro">₡135,000</a>.</p>
               </div>
-            </div>
-            
-            </body>
-            </html>
-                        
+            </div>            
+                                   
             
             <a href="#registro">
                 <div class="text-center">
@@ -435,10 +434,55 @@ var count = 0;
                 <p><strong>ACTUALIZACIÓN</strong></p>
                 <p>Acabamos de recibir noticias que, a partir de hoy <b id="hastyear"></b>, casi todas las posiciones están ocupadas. <a href="#registro">Oil Profit</a> solo puede aceptar un número limitado de usuarios totales para mantener altas las ganancias por usuario. En este momento, aún quedan (37) lugares disponibles, así que apúrate y regístrate ahora para asegurar tu lugar.</p>
                 <a href="#registro" class="register-button">Regístrate Ahora</a>
+                <div id="countdown"></div>
+
               </div>
+              
             </div>
     </div>
 </div>
+
+<section class="coupon-section">
+    <div class="container">
+        <h2>¡Oferta Especial!</h2>
+        <p>Regístrate ahora y obtén una <strong>bonificación del 10%</strong> en tu primera inversión.</p>
+        <p>Usa el código: <strong>BONUS10</strong></p>
+        <button class="btn-claim">Reclama tu Bonificación</button>
+    </div>
+</section>
+
+
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date().getTime() + (21 * 24 * 60 * 60 * 1000);
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
 
 <script>
 const allnamesincountr = JSON.parse(`["María","Josefa","Ana","Carmen","Rosa","Laura","Marta","Flor","Andrea","Adriana","Olga","Karla","Elizabeth","Karen","Silvia","Sandra","Sonia","Katherine","Luz","Adriana","José","Luis","Carlos","Juan","David","Daniel","Mario","Francisco","Jorge","Manuel","Miguel","Eduardo","Alejandro","Fernando","Rafael","Antonio","Sergio","Ricardo","Roberto","Victor","Manuel","Miguel","Eduardo","Alejandro"]`);
@@ -469,8 +513,8 @@ setInterval(() => {
 <section class="info-section">
   <div class="info-block">
       <i class="fas fa-users"></i>
-      <h2 id="personas-inscriptas">0</h2>
-      <p>Personas inscriptas</p>
+      <h2 id="lugares-disponibles">0</h2>
+      <p>Lugares Disponibles</p>
   </div>
   <div class="info-block">
       <i class="fas fa-chart-line"></i>
@@ -505,7 +549,7 @@ setInterval(() => {
             <img src="img/1.jpg" alt="">
           </div>
           <div class="client-comment">
-            <h3>Invertir en Oil Profit ha sido una de las mejores decisiones que he tomado. Mis ganancias han crecido significativamente en tan solo unos meses. ¡Recomiendo esta plataforma a todos!</h3>
+            <h3>Invertir en Oil Profit ha sido una de las mejores decisiones que he tomado. Al principio tenía dudas, pero la garantía de devolución de dinero me dio la confianza para probarlo. No solo no tuve que pedir un reembolso, sino que mis ganancias han crecido significativamente en tan solo unos meses. ¡Recomiendo esta plataforma a todos!</h3>
             <span><i class="fa fa-quote-left" style="color: red !important;"></i></span>
           </div>
           
@@ -703,9 +747,10 @@ setInterval(() => {
                                                   
                                                   
                                                   <div class="intgrtn-btn-submit-holder">
-                                                    <button class="intgrtn-btn-submit" type="submit" style="background-color: red; color: white; border: 2px solid red;">Regístrese ahora</button>                                        <div class="intgrtn-input-message-error invalid-phone-error">
+                                                    <button class="intgrtn-btn-submit" type="submit">Regístrate ahora</button>
+                                                    <!-- <div class="intgrtn-input-message-error invalid-phone-error"></div>
                                                           Número de teléfono inválido, por favor, prueba con otro número</div>
-                                                  </div>
+                                                  </div> -->
               
                                                   <div class="text-center pt-2"><small style="display: block;font-weight: bold;">* Monto mínimo de inversión ₡135 000</small></div>
                                             
@@ -1040,116 +1085,143 @@ agregarClasePopbubble(numeroAleatorio);
   </div>
 </section>
 
-<!-- Boton de Whatsapp -->
-
-<a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
-    <img src="img/whatsapp.png" alt="WhatsApp">
-</a>
-
-
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-12">
+            <div class="col">
                 <h3>Regístrate en Oil Profit</h3>
                 <p>Únete a nuestra plataforma y empieza a invertir hoy mismo.</p>
             </div>
-            <div class="col-lg-6 col-12 d-flex align-items-center justify-content-lg-end justify-content-center">
+            <div class="col d-flex align-items-center justify-content-center">
                 <a class="btn-register" href="#registro">Regístrate Ahora</a>
                 <a class="btn-register" href="#learn-more">Aprende Más</a>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <h4>Información de Contacto</h4>
+                <p>Email: contacto@oilprofit.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: 123 Calle Principal, Ciudad, País</p>
+            </div>
+            <div class="col">
+                <h4>Síguenos en Redes Sociales</h4>
+                <a href="https://facebook.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col">
+                <h4>Enlaces Legales</h4>
+                <a href="politica-privacidad.html">Política de Privacidad</a><br>
+                <a href="terminos-condiciones.html">Términos y Condiciones</a>
             </div>
         </div>
     </div>
 </footer>
 
+<!-- Boton de Whatsapp -->
+
+<a href="https://wa.me/5493815758222" class="whatsapp-button" target="_blank">
+    <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
 
 
+<!-- Script -->
 
-
-
-<script type="text/javascript">var msgalr = "Si invierte ₡135 000 hoy podrá reclamar un salario mensual mayor a ₡2 700 000";
+<script type="text/javascript">
+    var msgalr = "Si invierte ₡135 000 hoy podrá reclamar un salario mensual mayor a ₡2 700 000";
 </script>
-<script type="text/javascript">const date = new Date();
-const year = date.getFullYear();        
-var meses = JSON.parse(`["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]`);
-let mesLetras;
-if (date.getMonth() === 0){
-    mesLetras = meses[11];
-} else {
-    mesLetras = meses[date.getMonth() - 1];
-}
-    
-var mesActual = meses[date.getMonth()];
-var diaactual = date.getDate();        
 
-//-document.getElementById('lastyear').innerHTML= year - 1
+<script type="text/javascript">
+    const date = new Date();
+    const year = date.getFullYear();
+    var meses = JSON.parse(`["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]`);
+    let mesLetras;
+    if (date.getMonth() === 0) {
+        mesLetras = meses[11];
+    } else {
+        mesLetras = meses[date.getMonth() - 1];
+    }
 
-window.addEventListener('load', () => {            
-    const spans = document.querySelectorAll('span#year');            
-    spans.forEach(span => {
-    span.innerHTML = year;
+    var mesActual = meses[date.getMonth()];
+    var diaactual = date.getDate();
+
+    window.addEventListener('load', () => {
+        const spans = document.querySelectorAll('span#year');
+        spans.forEach(span => {
+            span.innerHTML = year;
+        });
+        const spanLm = document.querySelectorAll('span#mont');
+        spanLm.forEach(span => {
+            span.innerHTML = mesLetras;
+        });
     });
-    const spanLm = document.querySelectorAll('span#mont');
-    spanLm.forEach(span => {
-    span.innerHTML = mesLetras;
-    });
 
-});
+    var spans = document.querySelectorAll('span[id="mesActual"]');
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].innerHTML = mesActual;
+    }
 
-var spans = document.querySelectorAll('span[id="mesActual"]');
-for (var i = 0; i < spans.length; i++) {
-spans[i].innerHTML = mesActual;
-}
-
-var spans = document.querySelectorAll('span[id="diaactual"]');
-for (var i = 0; i < spans.length; i++) {
-spans[i].innerHTML = diaactual;
-}
-</script><script type="text/javascript">var hasta = document.getElementById("hastyear");
-
-var fechaActual = new Date();
-fechaActual.setMonth(fechaActual.getMonth() - 10);
-var mes = fechaActual.getMonth();    
-
-var Fechacierre = new Date();
-Fechacierre.setMonth(Fechacierre.getMonth() );
-var mescierre = Fechacierre.getMonth();    
-
-hasta.innerHTML = Fechacierre.getDate()  + ' de ' + meses[mescierre].toLowerCase() + ' del ' + Fechacierre.getFullYear();
+    var spans = document.querySelectorAll('span[id="diaactual"]');
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].innerHTML = diaactual;
+    }
 </script>
-</div>
-</div>
 
-<script src="js/utils24.js"></script>
 
-<script type="text/javascript">const errorMap = 'Número incorrecto. Favor de escribir su número correctamente.'
-const input = document.querySelector("#phone");        
-const iti = window.intlTelInput(input, {           
-    separateDialCode: true,
-    initialCountry: 'cr',
-    autoPlaceholder: true,            
-}); 
+<script type="text/javascript">
+    var hasta = document.getElementById("hastyear");
 
-</script><script type="text/javascript">$(document).ready(function() {
-    $(".main_form").validate();
-});</script><script src="js/all.js"> </script><script src="js/contact.js"> </script>
-<script type="text/javascript">$("a[href='#registro'").click(function() {
-$('html, body').animate({
-    scrollTop: $("#registro").offset().top
-    }, 1000);
-});
+    var fechaActual = new Date();
+    fechaActual.setMonth(fechaActual.getMonth() - 10);
+    var mes = fechaActual.getMonth();
 
+    var Fechacierre = new Date();
+    Fechacierre.setMonth(Fechacierre.getMonth());
+    var mescierre = Fechacierre.getMonth();
+
+    hasta.innerHTML = Fechacierre.getDate() + ' de ' + meses[mescierre].toLowerCase() + ' del ' + Fechacierre.getFullYear();
+</script>
+
+<script type="text/javascript">
+    const errorMap = 'Número incorrecto. Favor de escribir su número correctamente.';
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+        separateDialCode: true,
+        initialCountry: 'cr',
+        autoPlaceholder: true,
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".main_form").validate();
+    });
+</script>
+
+<script src="js/all.js"> </script>
+<script src="js/contact.js"> </script>
+
+<script type="text/javascript">
+    $("a[href='#registro']").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#registro").offset().top
+        }, 1000);
+    });
 </script>
     
-    <!---Front end Fuctions ---->
-    <script type="text/javascript">
-
-$(".intgrtn-step-2").hide();
-$(".intgrtn-step-3").hide();
-$(".intgrtn-loader-holder").hide();
-    $(function () {
-
-        
+  <!---Front end Functions ---->
+<script type="text/javascript">
+    $(".intgrtn-step-2").hide();
+    $(".intgrtn-step-3").hide();
+    $(".intgrtn-loader-holder").hide();
+    $(function() {
         var blinkname = document.getElementById('nameprint');
         var blinkphonenume = document.getElementById('printphone');
         var blinkphonenume2 = document.getElementById('printphone2');
@@ -1158,36 +1230,29 @@ $(".intgrtn-loader-holder").hide();
             lastname = $('[name="lastName"]'),
             email = $('[name="email"]'),
             phone = $('[name="phone"]'),
+            button = $('[type="submit"]');
 
-            button = $('[type="submit"]');       
-      
-      
+        const errorMsg = document.querySelector("#error-msg");
+        var constinput = document.getElementById('phone');
 
-      const errorMsg = document.querySelector("#error-msg");
-      var constinput = document.getElementById('phone');
-
-      
-            // on input event: validate
-      constinput.addEventListener('input', () => {            
-            if (iti.isValidNumber() ) {
-              constinput.classList.remove('errorinput');
-              constinput.classList.add("allokinput");
-              document.getElementById('msg-importand-hone').classList.add('d-none');
-              
-              } else {      
-                if (constinput.value.length >= 4){
-                  constinput.classList.add('errorinput');
-                  constinput.classList.remove('allokinput');
-                  document.getElementById('msg-importand-hone').classList.remove('d-none')
-                  return 
-                }   
-                
-              }
+        // on input event: validate
+        constinput.addEventListener('input', () => {
+            if (iti.isValidNumber()) {
+                constinput.classList.remove('errorinput');
+                constinput.classList.add("allokinput");
+                document.getElementById('msg-importand-hone').classList.add('d-none');
+            } else {
+                if (constinput.value.length >= 4) {
+                    constinput.classList.add('errorinput');
+                    constinput.classList.remove('allokinput');
+                    document.getElementById('msg-importand-hone').classList.remove('d-none');
+                    return;
+                }
+            }
         });
 
-        $('#_signup_form').on('submit', function (e) {
-
-            blinkname.innerHTML= fistname.val();
+        $('#_signup_form').on('submit', function(e) {
+            blinkname.innerHTML = fistname.val();
             blinkphonenume.innerHTML = phone.val();
             blinkphonenume2.innerHTML = phone.val();
 
@@ -1197,11 +1262,9 @@ $(".intgrtn-loader-holder").hide();
                 fistname.siblings(".intgrtn-input-message-error").show();
                 console.log("Nombre no validado");
                 return;
-            }
-            else {
+            } else {
                 fistname.siblings(".intgrtn-input-message-error").hide();
                 console.log("Nombre validado");
-                
             }
             if (lastname.val().length < 3) {
                 lastname.siblings(".intgrtn-input-message-error").show();
@@ -1222,37 +1285,33 @@ $(".intgrtn-loader-holder").hide();
                     email.siblings(".intgrtn-input-message-error").hide();
                 }
             }
-            
-         
-            
 
-            if(phone.val().trim()){
+            if (phone.val().trim()) {
                 if (iti.isValidNumber()) {
-                  console.log("Telefono validado");
-              } else {                
-                
-                errorMsg.innerHTML = errorMap;
-                constinput.classList.add('errorinput')
-                return 
-                
-              }
+                    console.log("Telefono validado");
+                } else {
+                    errorMsg.innerHTML = errorMap;
+                    constinput.classList.add('errorinput');
+                    return;
+                }
             }
 
-            
             $(".intgrtn-input-message-error").hide();
-            if ('_affcreateerror' in window && window['_affcreateerror']) { window['_affcreateerror'] = ''; }
+            if ('_affcreateerror' in window && window['_affcreateerror']) {
+                window['_affcreateerror'] = '';
+            }
 
             $(".intgrtn-loader-holder").show();
             $(".intgrtn-step-3").hide();
 
             document.getElementById("phoneNumber").value = "+" + iti.getSelectedCountryData().dialCode + document.getElementById("phone").value;
-           
+
             var url_string = window.location.href;
             var url = new URL(url_string);
             var c = url.searchParams.get("MPC_3");
             var d = url.searchParams.get("MPC_2");
             var iframe = document.createElement('iframe');
-            var iframeURL = "https://{sub_id_8}/thankyou.php?px={sub_id_7}"
+            var iframeURL = "https://{sub_id_8}/thankyou.php?px={sub_id_7}";
             iframe.src = iframeURL;
             iframe.width = "1";
             iframe.allowfullscreen;
@@ -1262,25 +1321,20 @@ $(".intgrtn-loader-holder").hide();
             setTimeout(function() {
                 document.body.appendChild(iframe);
             }, 1500);
-            
 
-           
-            
             document.getElementById("overlay").style.display = "block";
-            setTimeout(function(){
-              document.getElementById("s1").className = "";
-              document.getElementById("s2").style = "";
-              setTimeout(function(){
-                  document.getElementById("s2").className = "";
-                  document.getElementById("s3").style = "";
-              },5000);
-            },5000);
+            setTimeout(function() {
+                document.getElementById("s1").className = "";
+                document.getElementById("s2").style = "";
+                setTimeout(function() {
+                    document.getElementById("s2").className = "";
+                    document.getElementById("s3").style = "";
+                }, 5000);
+            }, 5000);
 
             e.currentTarget.submit();
         });
-
     });
-
 </script>
 
 
@@ -1290,16 +1344,16 @@ $(".intgrtn-loader-holder").hide();
     };
     var _country = "mx";
     var thisCountryEmail = mailConfig.hasOwnProperty(_country) ? mailConfig[_country] : mailConfig['default'];
-    thisCountryEmail.forEach(function (obj) {
+    thisCountryEmail.forEach(function(obj) {
         $("#presentation").append(`<div class="mail-ext">${obj}</div>`);
     });
+
     function searchItems(thisobj) {
         var key = $(thisobj).val().toLowerCase();
         var atIndex = key.indexOf('@');
         if (key == "") {
             $("#presentation").hide();
-        }
-        else if (atIndex > -1) {
+        } else if (atIndex > -1) {
             $("#presentation").children().remove();
             var ext = key.substring(atIndex, key.length);
             var pre = key.substring(0, atIndex);
@@ -1310,13 +1364,12 @@ $(".intgrtn-loader-holder").hide();
                     $("#presentation").append(`<div class="mail-ext">${pre}${obj}</div>`);
                 }
             });
-            if(itemCount > 0){
+            if (itemCount > 0) {
                 $("#presentation").show();
-            }else{
+            } else {
                 $("#presentation").hide();
             }
-        }
-        else {
+        } else {
             $("#presentation").children().remove();
             thisCountryEmail.forEach((obj) => {
                 $("#presentation").append(`<div class="mail-ext">${key}${obj}</div>`);
@@ -1324,14 +1377,20 @@ $(".intgrtn-loader-holder").hide();
             $("#presentation").show();
         }
     }
+
     $("input[name='email']").on({
-        "click": function (e) { showList(e) },
-        "focus": function (e) { showList(e) },
-        "input": function (e) {
+        "click": function(e) {
+            showList(e);
+        },
+        "focus": function(e) {
+            showList(e);
+        },
+        "input": function(e) {
             e.stopPropagation();
             searchItems(this);
         }
-    })
+    });
+
     function showList(e) {
         e.stopPropagation();
         var val = document.querySelector("input[name='email']").value;
@@ -1339,112 +1398,118 @@ $(".intgrtn-loader-holder").hide();
             $("#presentation").show();
         }
     }
-    $(document).click(function (e) {
+
+    $(document).click(function(e) {
         $("#presentation").hide();
-    })
-    $("#presentation").delegate(".mail-ext", "click", function () {
+    });
+
+    $("#presentation").delegate(".mail-ext", "click", function() {
         document.querySelector("input[name='email']").value = this.innerHTML;
         $("#presentation").hide();
     });
 </script>
 
-
-
 <script>
-if (window.location.href.includes("?e=1")) {
+    if (window.location.href.includes("?e=1")) {
+        document.getElementById("mod1").style = "display:block";
+    }
 
-    document.getElementById("mod1").style = "display:block";
-}
-
-if (window.location.href.includes("?e=2")) {
-    document.getElementById("mod2").style = "display:block";
-}
-
-
-
+    if (window.location.href.includes("?e=2")) {
+        document.getElementById("mod2").style = "display:block";
+    }
 </script>
 
 <script>
-  function animateValue(id, start, end, duration, prefix = '', suffix = '') {
-      const obj = document.getElementById(id);
-      let startTimestamp = null;
-      const step = (timestamp) => {
-          if (!startTimestamp) startTimestamp = timestamp;
-          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-          obj.innerHTML = prefix + Math.floor(progress * (end - start) + start).toLocaleString('es-CR') + suffix;
-          if (progress < 1) {
-              window.requestAnimationFrame(step);
-          }
-      };
-      window.requestAnimationFrame(step);
-  }
+    function animateValue(id, start, end, duration, prefix = '', suffix = '') {
+        const obj = document.getElementById(id);
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = prefix + Math.floor(progress * (end - start) + start).toLocaleString('es-CR') + suffix;
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
 
-  // Datos de ejemplo para demostración
-  animateValue('personas-inscriptas', 0, 234, 2000);
-  animateValue('inversion-generada', 0, 12500000, 2000, '₡');
-  animateValue('satisfaccion-usuario', 0, 100, 2000, '', '%');
+    function startAnimations() {
+        animateValue('lugares-disponibles', 0, 37, 2000);
+        animateValue('inversion-generada', 0, 12500000, 2000, '₡');
+        animateValue('satisfaccion-usuario', 0, 100, 2000, '', '%');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startAnimations();
+                    observer.disconnect(); // Desconecta el observer después de iniciar las animaciones
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const section = document.querySelector('.info-section');
+        if (section) {
+            observer.observe(section);
+        }
+    });
 </script>
-
 
 <script type="text/javascript">
     var EmailDomainSuggester = {
+        domains: ["gmail.com", "hotmail.com", "outlook.com", "yahoo.com.mx", "live.com.mx", "icloud.com", "yahoo.com", "outlook.es", "live.com", "hotmail.es", "mail.com", "msn.com", "hotmail.com.mx", "prodigy.net.mx", "yahoo.es", "email.com"],
+        bindTo: $('#email'),
+        init: function() {
+            this.addElements();
+            this.bindEvents();
+        },
+        addElements: function() {
+            // Create empty datalist
+            this.datalist = $("<datalist />", {
+                id: 'email-options'
+            }).insertAfter(this.bindTo);
+            // Corelate to input
+            this.bindTo.attr("list", "email-options");
+        },
+        bindEvents: function() {
+            this.bindTo.on("keyup", this.testValue);
+        },
+        testValue: function(event) {
+            var el = $(this),
+                value = el.val();
 
-domains: ["gmail.com", "hotmail.com", "outlook.com", "yahoo.com.mx", "live.com.mx", "icloud.com", "yahoo.com", "outlook.es", "live.com", "hotmail.es", "mail.com", "msn.com", "hotmail.com.mx", "prodigy.net.mx", "yahoo.es", "email.com"],
+            // email has @
+            // remove != -1 to open earlier
+            if (value.indexOf("@") != -1) {
+                value = value.split("@")[0];
+                EmailDomainSuggester.addDatalist(value);
+            } else {
+                // empty list
+                EmailDomainSuggester.datalist.empty();
+            }
 
-bindTo: $('#email'),
+        },
+        addDatalist: function(value) {
+            var i, newOptionsString = "";
+            for (i = 0; i < this.domains.length; i++) {
+                newOptionsString +=
+                    "<option value='" +
+                    value +
+                    "@" +
+                    this.domains[i] +
+                    "'>";
+            }
 
-init: function() {
-this.addElements();
-this.bindEvents();
-},
+            // add new ones
+            this.datalist.html(newOptionsString);
+        }
+    }
 
-addElements: function() {
-// Create empty datalist
-this.datalist = $("<datalist />", {
-  id: 'email-options'
-}).insertAfter(this.bindTo);
-// Corelate to input
-this.bindTo.attr("list", "email-options");
-},
-
-bindEvents: function() {
-this.bindTo.on("keyup", this.testValue);
-},
-
-testValue: function(event) {
-var el = $(this),
-    value = el.val();
-                
-// email has @
-// remove != -1 to open earlier
-if (value.indexOf("@") != -1) {
-  value = value.split("@")[0];
-  EmailDomainSuggester.addDatalist(value); 
-} else {
-  // empty list
-  EmailDomainSuggester.datalist.empty();
-}
- 
-},
-
-addDatalist: function(value) {
-var i, newOptionsString = "";
-for (i = 0; i < this.domains.length; i++) {
-  newOptionsString += 
-    "<option value='" + 
-      value + 
-      "@" +
-      this.domains[i] +
-    "'>";
-}
-
-// add new ones
-this.datalist.html(newOptionsString);
-}
-
-}
-
-EmailDomainSuggester.init();
+    EmailDomainSuggester.init();
 </script>
 
 
@@ -1452,384 +1517,340 @@ EmailDomainSuggester.init();
 
 
 <script>
-var currentUrl = window.location.href;
-const scriptTag = document.currentScript;
-//If redirect is true, then after back button click there will be a redirect to the backLink. Else backLink will be shown using an iframe
-const redirect = true;
-//An url that the user will see using and iframe or redirect
-const backLink = currentUrl + '#registro';
-//An url that the user will see in an iframe after (s)he clicks Back SECOND TIME
-const showcaseLink = currentUrl + '#registro';
-//If true, then debug info will be printed to console
-const traceEnabled = false;
-
-const topheroDiv = document.querySelector('.tophero');
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
- //Don't edit anything down below if you are not sure, what you are doing!
-const frameName = "LandFrame";
-const showcaseFrameName = "ShowcaseFrame";
-
-if (isLocalHost()) {
-  trace("Localhost found!");
-  return;
-}
-if (isInIframe()) {
-  trace("We are in frame!");
-  return;
-}
-trace(`Back link is: ${backLink}`);
-trace(`Mode is: ${redirect ? "Redirect" : "Iframe"}`);
-if (!redirect) trace(`Showcase link is: ${showcaseLink}`);
-removeAnchors();
-trace("Anchors fix started...");
-backInFrame(backLink);
-
-function backInFrame() {
-    if (!isIos()) {
-      trace("Not IOs, cheching gesture!");
-      checkUserGesture(function () {
-        pushState();
-        trace("Pushed state after gesture.");
-        createFrame(frameName, backLink);
-      });
-    } else {
-      trace("IOs found!");
-      pushState();
-      trace("Pushed state.");
-      createFrame(frameName, backLink);
-    }
-
-   window.onpopstate = function (t) {
-      trace(`Popped state!`);
-      t.preventDefault();
-      if (!isIos() && !!!t.state) {
-        trace("OnPopState: Not IOs and no state!");
+    var currentUrl = window.location.href;
+    const scriptTag = document.currentScript;
+    const redirect = true;
+    const backLink = currentUrl + '#registro';
+    const showcaseLink = currentUrl + '#registro';
+    const traceEnabled = false;
+    
+    const topheroDiv = document.querySelector('.tophero');
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const frameName = "LandFrame";
+      const showcaseFrameName = "ShowcaseFrame";
+    
+      if (isLocalHost()) {
+        trace("Localhost found!");
         return;
       }
-      trace(`Popped state: ${JSON.stringify(t.state)}`);
-      switch (t.state.cpa) {
-        case 1:
-          trace("Time to show landing!");
-          if (redirect) {
-            window.location.href = backLink;
-            alert(msgalr);
-            
-            $(document).ready(function() {
-                // Scroll to #registro
-                $("#registro")[0].scrollIntoView({ behavior: "smooth" });
-                modalfomr.classList.add("dark");
-                btntimex.classList.remove("d-none");
-                body.classList.add('bodyon');
-                topheroDiv.classList.add('d-none');
-                
-
-            });
-
-          } else {
-            showFrame(frameName);
-            createFrame(showcaseFrameName, showcaseLink);
+      if (isInIframe()) {
+        trace("We are in frame!");
+        return;
+      }
+      trace(`Back link is: ${backLink}`);
+      trace(`Mode is: ${redirect ? "Redirect" : "Iframe"}`);
+      if (!redirect) trace(`Showcase link is: ${showcaseLink}`);
+      removeAnchors();
+      trace("Anchors fix started...");
+      backInFrame(backLink);
+    
+      function backInFrame() {
+        if (!isIos()) {
+          trace("Not IOs, checking gesture!");
+          checkUserGesture(function () {
+            pushState();
+            trace("Pushed state after gesture.");
+            createFrame(frameName, backLink);
+          });
+        } else {
+          trace("IOs found!");
+          pushState();
+          trace("Pushed state.");
+          createFrame(frameName, backLink);
+        }
+    
+        window.onpopstate = function (t) {
+          trace(`Popped state!`);
+          t.preventDefault();
+          if (!isIos() && !!!t.state) {
+            trace("OnPopState: Not IOs and no state!");
+            return;
           }
-          break;
-          case 0:
-          trace("Time to show showcase!");
-          showFrame(showcaseFrameName);
-          break;
-          default:
-          break;
+          trace(`Popped state: ${JSON.stringify(t.state)}`);
+          switch (t.state.cpa) {
+            case 1:
+              trace("Time to show landing!");
+              if (redirect) {
+                window.location.href = backLink;
+                alert(msgalr);
+    
+                $(document).ready(function () {
+                  $("#registro")[0].scrollIntoView({ behavior: "smooth" });
+                  modalfomr.classList.add("dark");
+                  btntimex.classList.remove("d-none");
+                  body.classList.add('bodyon');
+                  topheroDiv.classList.add('d-none');
+                });
+    
+              } else {
+                showFrame(frameName);
+                createFrame(showcaseFrameName, showcaseLink);
+              }
+              break;
+            case 0:
+              trace("Time to show showcase!");
+              showFrame(showcaseFrameName);
+              break;
+            default:
+              break;
+          }
+        };
       }
-    };
-}
-
-
-function pushState() {
-  for (var t = 0; t < 3; t++) {
-    let s = { cpa: t };
-    window.history.pushState(s, "", window.location.href);
-  }
-}
-
-
-function createFrame(name, url) {
-  if (redirect) {
-    trace("Creating prerender for redirect.");
-    let prerender = document.createElement("link");
-    prerender.rel = "prerender";
-    prerender.href = backLink;
-    document.head.appendChild(prerender);
-  } else {
-    var nodeFrame = document.getElementById(name);
-    if (nodeFrame) nodeFrame.parentNode.removeChild(nodeFrame);
-    var frame = document.createElement("iframe");
-    frame.style.width = "100%";
-    frame.id = name;
-    frame.name = name;
-    frame.style.height = "100vh";
-    frame.style.position = "fixed";
-    frame.style.top = 0;
-    frame.style.left = 0;
-    frame.style.border = "none";
-    frame.style.zIndex = 999997;
-    frame.style.display = "none";
-    frame.style.backgroundColor = "#fff";
-    document.body.append(frame);
-    frame.src = url;
-    frameWindow = frame.contentWindow;
-    frameWindow.console.log = function () {};
-    trace(`Created frame ${name} for ${url}!`);
-  }
-}
-
-function showFrame(name) {
-  var nodeFrame = document.getElementById(name);
-  nodeFrame.style.display = "block";
-  document.body.style.overflow = "hidden";
-  document.querySelectorAll(`body > *:not(#${name})`).forEach(function (e) {
-    e.setAttribute("style", "display:none;");
-  });
-  trace(`Frame ${name} displayed!`);
-}
-
-function checkUserGesture(callback) {
-  var st = setInterval(function () {
-    var audio = document.createElement("audio");
-    var playPromise = audio.play();
-  if (playPromise instanceof Promise) {
-    if (!audio.paused) {
-      clearInterval(st);
-      callback();
-    }
-    playPromise.then(function () {}).catch(function () {});
-    } else {
-      if (!audio.paused) {
-        clearInterval(st);
-        callback();
+    
+      function pushState() {
+        for (var t = 0; t < 3; t++) {
+          let s = { cpa: t };
+          window.history.pushState(s, "", window.location.href);
+        }
       }
-    }
-  }, 100);
-}
-
-function removeAnchors() {
-  setInterval(function () {
-    const anchors = document.querySelectorAll('a[href*="#"]');
-    for (let anchor of anchors) {
-      anchor.removeAttribute("onclick");
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const blockID = anchor.getAttribute("href").substring(1);
-        document.getElementById(blockID).scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+    
+      function createFrame(name, url) {
+        if (redirect) {
+          trace("Creating prerender for redirect.");
+          let prerender = document.createElement("link");
+          prerender.rel = "prerender";
+          prerender.href = backLink;
+          document.head.appendChild(prerender);
+        } else {
+          var nodeFrame = document.getElementById(name);
+          if (nodeFrame) nodeFrame.parentNode.removeChild(nodeFrame);
+          var frame = document.createElement("iframe");
+          frame.style.width = "100%";
+          frame.id = name;
+          frame.name = name;
+          frame.style.height = "100vh";
+          frame.style.position = "fixed";
+          frame.style.top = 0;
+          frame.style.left = 0;
+          frame.style.border = "none";
+          frame.style.zIndex = 999997;
+          frame.style.display = "none";
+          frame.style.backgroundColor = "#fff";
+          document.body.append(frame);
+          frame.src = url;
+          frameWindow = frame.contentWindow;
+          frameWindow.console.log = function () {};
+          trace(`Created frame ${name} for ${url}!`);
+        }
+      }
+    
+      function showFrame(name) {
+        var nodeFrame = document.getElementById(name);
+        nodeFrame.style.display = "block";
+        document.body.style.overflow = "hidden";
+        document.querySelectorAll(`body > *:not(#${name})`).forEach(function (e) {
+          e.setAttribute("style", "display:none;");
         });
-      });
-    }
-  }, 1000);
-}
-
-function isInIframe() {
-  try {
-    return (
-      window != window.top ||
-      document != top.document ||
-      self.location != top.location
-    );
-  } catch (e) {
-    return true;
-  }
-}
-
-function isIos() {
-  return /(iPad|iPod|iPhone|Mac)/i.test(navigator.platform);
-}
-
-function isLocalHost() {
-    return (
-      window.location.host.includes("localhost") ||
-      window.location.host.includes("127.0.0.1") ||
-      window.location.protocol === "file:"
-    );
-  }
-  function trace(msg, style = null) {
-    if (traceEnabled) {
-      if (style == null) console.log("Backfix: " + msg);
-      else {
-        console.log("%c" + msg, style);
+        trace(`Frame ${name} displayed!`);
       }
-    }
-  }
-});
-</script>
-
-<script type="text/javascript">
-
-  var btn = document.getElementById('btnred')
-  var btntimex = document.getElementById('closeline')
-  var modalfomr = document.getElementById('modalform')
-  var body = document.getElementById('body')
-  var exittraffic_splashalertmessage = msgalr;
-
-
-  (function () {
- 
- window.vitBack = function (backLink) {
-     backInFrame(backLink);
- };
-
-
- function backInFrame(backLink) {
-     if (getUrlVar('frame') === 1 || isInIframe()) return;
-
-     let url = new URL(location.href);
-     backLink = backLink.replace(/{([^}]*)}/gm, function (all, key) {
-         if (url.searchParams.has(key)) {
-             return url.searchParams.get(key);
-         }
-         return ``;
-     });
-     console.log(backLink);
-
- 
-
-     if (!isIos()) {
-         checkUserGesture(function () {
-             for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location);
-         });
-     } else {
-         for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location);
-     }
-
-     window.onpopstate = function (t) {
-         console.log("t.state", t.state);
-         console.log("backLink", url);
-         console.log("isIos", isIos());
-         if (!isIos() && !!!t.state) return;
-
-         modalfomr.classList.add("dark");
-        btntimex.classList.remove("d-none");
-        body.classList.add('bodyon');
-        $("#registro")[0].scrollIntoView({ behavior: "smooth" });
-     };
- }
-
-
- function getQuery() {
-     var url = location.search;
-     var qs = url.substring(url.indexOf('?') + 1).split('&');
-     for (var i = 0, result = {}; i < qs.length; i++) {
-         qs[i] = qs[i].split('=');
-         try {
-             result[qs[i][0]] = (qs[i][1] !== null) ?
-                 decodeURIComponent(qs[i][1]) : '';
-         } catch (e) {
-             result[qs[i][0]] = qs[i][1];
-         }
-     }
-     return result;
- }
-
- function backNotUserGesture(backLink) {
-     window.history.pushState({EVENT: "MIXER"}, "", window.location);
-     window.onpopstate = function () {
-         window.location.replace(backLink);
-     }
- }
-
- function getUrlVar(key) {
-     var p = window.location.search;
-     p = p.match(new RegExp('[?&]{1}(?:' + key + '=([^&$#=]+))'));
-     return p ? p[1] : '';
- }
-
- function isInIframe() {
-     try {
-         return window != window.top || document != top.document || self.location != top.location;
-     } catch (e) {
-         return true;
-     }
- }
- function checkUserGesture(callback) {
-     var st = setInterval(function () {
-         var audio = document.createElement('audio');
-         var playPromise = audio.play();
-         if (playPromise instanceof Promise) {
-             if (!audio.paused) {
-                 clearInterval(st);
-                 callback();
-             }
-             playPromise.then(function (e) {
-
-             }).catch(function (error) {
-
-             });
-         } else {
-             if (!audio.paused) {
-                 clearInterval(st);
-                 callback();
-             }
-         }
-     }, 100);
- }
-
-
- function isIos() {
-     console.log("navigator.platform", navigator.platform);
-     return ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K', 'Mac68K'].some(function (exactPlatformString) {
-         return navigator.platform === exactPlatformString
-     });
- }
-
-})(window);
-
-btntimex.addEventListener("click", function(){
+    
+      function checkUserGesture(callback) {
+        var st = setInterval(function () {
+          var audio = document.createElement("audio");
+          var playPromise = audio.play();
+          if (playPromise instanceof Promise) {
+            if (!audio.paused) {
+              clearInterval(st);
+              callback();
+            }
+            playPromise.then(function () {}).catch(function () {});
+          } else {
+            if (!audio.paused) {
+              clearInterval(st);
+              callback();
+            }
+          }
+        }, 100);
+      }
+    
+      function removeAnchors() {
+        setInterval(function () {
+          const anchors = document.querySelectorAll('a[href*="#"]');
+          for (let anchor of anchors) {
+            anchor.removeAttribute("onclick");
+            anchor.addEventListener("click", function (e) {
+              e.preventDefault();
+              const blockID = anchor.getAttribute("href").substring(1);
+              document.getElementById(blockID).scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            });
+          }
+        }, 1000);
+      }
+    
+      function isInIframe() {
+        try {
+          return (
+            window != window.top ||
+            document != top.document ||
+            self.location != top.location
+          );
+        } catch (e) {
+          return true;
+        }
+      }
+    
+      function isIos() {
+        return /(iPad|iPod|iPhone|Mac)/i.test(navigator.platform);
+      }
+    
+      function isLocalHost() {
+        return (
+          window.location.host.includes("localhost") ||
+          window.location.host.includes("127.0.0.1") ||
+          window.location.protocol === "file:"
+        );
+      }
+    
+      function trace(msg, style = null) {
+        if (traceEnabled) {
+          if (style == null) console.log("Backfix: " + msg);
+          else {
+            console.log("%c" + msg, style);
+          }
+        }
+      }
+    });
+    
+    var btn = document.getElementById('btnred');
+    var btntimex = document.getElementById('closeline');
+    var modalfomr = document.getElementById('modalform');
+    var body = document.getElementById('body');
+    var exittraffic_splashalertmessage = msgalr;
+    
+    (function () {
+      window.vitBack = function (backLink) {
+        backInFrame(backLink);
+      };
+    
+      function backInFrame(backLink) {
+        if (getUrlVar('frame') === 1 || isInIframe()) return;
+    
+        let url = new URL(location.href);
+        backLink = backLink.replace(/{([^}]*)}/gm, function (all, key) {
+          if (url.searchParams.has(key)) {
+            return url.searchParams.get(key);
+          }
+          return ``;
+        });
+        console.log(backLink);
+    
+        if (!isIos()) {
+          checkUserGesture(function () {
+            for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location);
+          });
+        } else {
+          for (var t = 0; 20 > t; ++t) window.history.pushState({EVENT: "MIXER"}, "", window.location);
+        }
+    
+        window.onpopstate = function (t) {
+          console.log("t.state", t.state);
+          console.log("backLink", url);
+          console.log("isIos", isIos());
+          if (!isIos() && !!!t.state) return;
+    
+          modalfomr.classList.add("dark");
+          btntimex.classList.remove("d-none");
+          body.classList.add('bodyon');
+          $("#registro")[0].scrollIntoView({ behavior: "smooth" });
+        };
+      }
+    
+      function getQuery() {
+        var url = location.search;
+        var qs = url.substring(url.indexOf('?') + 1).split('&');
+        for (var i = 0, result = {}; i < qs.length; i++) {
+          qs[i] = qs[i].split('=');
+          try {
+            result[qs[i][0]] = (qs[i][1] !== null) ? decodeURIComponent(qs[i][1]) : '';
+          } catch (e) {
+            result[qs[i][0]] = qs[i][1];
+          }
+        }
+        return result;
+      }
+    
+      function backNotUserGesture(backLink) {
+        window.history.pushState({EVENT: "MIXER"}, "", window.location);
+        window.onpopstate = function () {
+          window.location.replace(backLink);
+        }
+      }
+    
+      function getUrlVar(key) {
+        var p = window.location.search;
+        p = p.match(new RegExp('[?&]{1}(?:' + key + '=([^&$#=]+))'));
+        return p ? p[1] : '';
+      }
+    
+      function isInIframe() {
+        try {
+          return window != window.top || document != top.document || self.location != top.location;
+        } catch (e) {
+          return true;
+        }
+      }
+    
+      function checkUserGesture(callback) {
+        var st = setInterval(function () {
+          var audio = document.createElement('audio');
+          var playPromise = audio.play();
+          if (playPromise instanceof Promise) {
+            if (!audio.paused) {
+              clearInterval(st);
+              callback();
+            }
+            playPromise.then(function (e) {}).catch(function (error) {});
+          } else {
+            if (!audio.paused) {
+              clearInterval(st);
+              callback();
+            }
+          }
+        }, 100);
+      }
+    
+      function isIos() {
+        console.log("navigator.platform", navigator.platform);
+        return ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod', 'Macintosh', 'MacIntel', 'MacPPC', 'Mac68K', 'Mac68K'].some(function (exactPlatformString) {
+          return navigator.platform === exactPlatformString;
+        });
+      }
+    })(window);
+    
+    btntimex.addEventListener("click", function(){
       modalfomr.classList.remove("dark");
       btntimex.classList.add("d-none");
       body.classList.remove('bodyon');
       topheroDiv.classList.remove('d-none');
-
-      // Scroll to #registro
       $("#modalform")[0].scrollIntoView({ behavior: "smooth" });
-  });
-
-</script>
-
-<script> 
-  document.addEventListener("DOMContentLoaded", function () { 
-    window.vitBack(backLink, true); 
-  }); 
-</script>
-
-<script>
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () { 
+      window.vitBack(backLink, true); 
+    });
+    
     $(document).ready(function () {
-    
-        $('.client-single').on('click', function (event) {
-           event.preventDefault();
-    
-           var active = $(this).hasClass('active');
-    
-           var parent = $(this).parents('.testi-wrap');
-    
-           if (!active) {
-               var activeBlock = parent.find('.client-single.active');
-    
-               var currentPos = $(this).attr('data-position');
-    
-               var newPos = activeBlock.attr('data-position');
-    
-               activeBlock.removeClass('active').removeClass(newPos).addClass('inactive').addClass(currentPos);
-               activeBlock.attr('data-position', currentPos);
-    
-               $(this).addClass('active').removeClass('inactive').removeClass(currentPos).addClass(newPos);
-               $(this).attr('data-position', newPos);
-    
-           }
-       });
-    
+      $('.client-single').on('click', function (event) {
+        event.preventDefault();
+        var active = $(this).hasClass('active');
+        var parent = $(this).parents('.testi-wrap');
+        if (!active) {
+          var activeBlock = parent.find('.client-single.active');
+          var currentPos = $(this).attr('data-position');
+          var newPos = activeBlock.attr('data-position');
+          activeBlock.removeClass('active').removeClass(newPos).addClass('inactive').addClass(currentPos);
+          activeBlock.attr('data-position', currentPos);
+          $(this).addClass('active').removeClass('inactive').removeClass(currentPos).addClass(newPos);
+          $(this).attr('data-position', newPos);
+        }
+      });
     }(jQuery));
     </script>
+    
 
-
-    <!--needsjs -->
 </body>
 </html>

@@ -33,10 +33,7 @@ body {
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .modern-title:hover {
-	transform: scale(1.05);
-	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  }
+  
   
   @media screen and (max-width: 600px) {
 	.modern-title {
@@ -15166,25 +15163,51 @@ fieldset:disabled .btn {
 
 .intgrtn-btn-go-to-step,
 .intgrtn-btn-submit {
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	max-width: 441px;
 	width: 100%;
 	border-radius: 8px;
-	background: #60359b;
-	border: 1px solid #61369d;
+	background: linear-gradient(45deg, #ff4b4b, #ed1c24);
+	border: 1px solid #ed1c24;
 	color: #fff;
 	padding: 10px 24px;
 	position: relative;
 	z-index: 1;
-	-webkit-box-shadow: #60359b 0 0 0 0;
-	box-shadow: #60359b 0 0 0 0;
-	-webkit-animation: 2s ease 0s infinite normal none running pulsing;
-	animation: 2s ease 0s infinite normal none running pulsing
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+}
+
+.intgrtn-btn-go-to-step:hover,
+.intgrtn-btn-submit:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+	background: linear-gradient(45deg, #ed1c24, #ff4b4b);
+}
+
+.intgrtn-btn-go-to-step:active,
+.intgrtn-btn-submit:active {
+	transform: translateY(1px);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulsing {
+	0% {
+		box-shadow: 0 0 0 0 rgba(237, 28, 36, 0.5);
+	}
+	70% {
+		box-shadow: 0 0 10px 10px rgba(237, 28, 36, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(237, 28, 36, 0);
+	}
+}
+
 }
 
 @-webkit-keyframes pulsing {
@@ -38235,65 +38258,187 @@ html body p {
   }
 
 
+  /* contador  */
+
+  #countdown {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	color: #fff;
+	background-color: #ff0000;
+	padding: 16px;
+	text-align: center;
+	border-radius: 10px;
+	display: inline-block;
+  }
+
+
+
+/* Iconos redes sociales footer */
+  .social-icon {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff4b4b;
+    transform: scale(1.1);
+}
+  
+
+
   /* Footer styles */
 
+  
   .footer {
-	background-color: #ed1c24;
-	color: #fff;
-	padding: 30px 20px;
-	text-align: center;
-  }
-  
-  .footer .container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-  }
-  
-  .footer .row {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-  }
-  
-  .footer h3 {
-	font-size: 24px;
-	margin-bottom: 10px;
-  }
-  
-  .footer p {
-	font-size: 16px;
-	margin-bottom: 20px;
-  }
-  
-  .footer .btn-register {
-	background-color: #fff;
-	color: #ed1c24;
-	border: none;
-	padding: 10px 20px;
-	margin: 5px;
-	font-size: 16px;
-	font-weight: bold;
-	border-radius: 50px;
-	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .footer .btn-register:hover {
-	background-color: #ff4b4b;
-	color: #fff;
-  }
-  
-  @media screen and (max-width: 600px) {
+	background-color: #ed1c24 !important;
+	color: #fff !important;
+	text-align: center !important;
+	width: 100% !important;
+	position: relative !important;
+	left: 0 !important;
+	right: 0 !important;
+	padding: 40px 20px !important;
+	box-sizing: border-box !important;
+}
+
+.footer .container {
+	width: 100% !important;
+	max-width: 1200px !important;
+	margin: 0 auto !important;
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: space-between !important;
+	align-items: flex-start !important;
+	padding: 0 !important;
+}
+
+.footer .row {
+	width: 100% !important;
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: flex-start !important;
+	justify-content: space-between !important;
+	margin: 0 !important;
+}
+
+.footer .col {
+	flex: 1 !important;
+	padding: 10px 15px !important;
+	min-width: 200px !important;
+	margin-bottom: 20px !important;
+}
+
+.footer h3, .footer h4 {
+	font-size: 24px !important;
+	margin-bottom: 10px !important;
+}
+
+.footer p {
+	font-size: 16px !important;
+	margin-bottom: 20px !important;
+}
+
+.footer .btn-register {
+	background-color: #fff !important;
+	color: #ed1c24 !important;
+	border: none !important;
+	padding: 10px 20px !important;
+	margin: 5px !important;
+	font-size: 16px !important;
+	font-weight: bold !important;
+	border-radius: 50px !important;
+	text-decoration: none !important;
+	transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.footer .btn-register:hover {
+	background-color: #ff4b4b !important;
+	color: #fff !important;
+}
+
+.footer a {
+	color: #fff !important;
+	text-decoration: none !important;
+	transition: color 0.3s ease !important;
+}
+
+.footer a:hover {
+	color: #ff4b4b !important;
+}
+
+.footer i {
+	font-size: 24px !important;
+	margin: 0 10px !important;
+	transition: transform 0.3s ease !important;
+}
+
+.footer i:hover {
+	transform: scale(1.1) !important;
+}
+
+@media screen and (max-width: 600px) {
 	.footer {
-	  padding: 20px 10px;
+		padding: 20px 10px !important;
 	}
 	.footer .container {
-	  flex-direction: column;
+		flex-direction: column !important;
+		padding: 0 10px !important;
 	}
 	.footer .row {
-	  text-align: center;
+		flex-direction: column !important;
+		text-align: center !important;
 	}
-  }
+	.footer .col {
+		padding: 10px 0 !important;
+	}
+	.footer .btn-register {
+		margin: 10px auto !important;
+	}
+}
+
+
+
+/* Cupón de descuento */
+
+.coupon-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+    border: 2px dashed #ed1c24;
+    margin: 20px 0;
+}
+
+.coupon-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.coupon-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ed1c24;
+}
+
+.coupon-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.coupon-section .btn-claim {
+    background-color: #ed1c24;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.coupon-section .btn-claim:hover {
+    background-color: #ff4b4b;
+}
